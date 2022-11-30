@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aiofast"
+description = "A simple aiohttp library to quickly write api."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    { name = "Daniil Grois", email = "daniil.grois@gmail.com" },
+]
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Environment :: Web Environment",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "aiohttp==3.8.3",
+    "pydantic >=1.10.2,<2.0.0",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/daniil-grois/aiofast"
+Documentation = "https://github.com/daniil-grois/aiofast"
+
+[project.optional-dependencies]
+test = [
+    "pytest >=7.1.3,<8.0.0",
+    "mypy ==0.982",
+    "wemake-python-styleguide == 0.17.0",
+    "isort >=5.10.1,<6.0.0",
+]
+dev = [
+    "pre-commit >=2.17.0,<3.0.0",
+]
+
+[tool.hatch.version]
+path = "aiofast/__init__.py"
+
+[tool.mypy]
+strict = true
